@@ -43,21 +43,24 @@ def modifyOriginalPath(grid,finalPath):
 			grid[finalPath[i].row][finalPath[i].col] = "."
 	return grid
 
-print("Original Maze:")
-grid = [['*', '*', '0', 's', '*'],
-        ['*', '0', '*', '0', '*'],
-        ['*', '*', '0', '*', '*'],
-        ['*', '*', '*', '*', '*'],
-        ['d', '0', '*', '*', '0']]
+def main():
+	print("Original Maze:")
+	grid = [['*', '*', '0', 's', '*'],
+	        ['*', '*', '*', '0', '*'],
+	        ['*', '0', '*', '0', '*'],
+	        ['*', '0', '*', '*', '*'],
+	        ['d', '0', '*', '*', '0']]
 
-for i in range(len(grid)):
-	print(grid[i])
+	for i in range(len(grid)):
+		print(grid[i])
 
-finalPath = shortestPath(grid)
-if(finalPath == None):
-	print("No Path")
-else:
-	endPath = modifyOriginalPath(grid,finalPath)
-	print("\nCorrect Path:")
-	for i in range(len(endPath)):
-		print(endPath[i])
+	finalPath = shortestPath(grid)
+	if(finalPath == None):
+		print("No Path")
+	else:
+		endPath = modifyOriginalPath(grid,finalPath)
+		print("\nCorrect Path:")
+		for i in range(len(endPath)):
+			print(endPath[i])
+
+main()
